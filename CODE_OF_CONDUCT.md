@@ -33,7 +33,7 @@ This applies to all project spaces and interactions, including:
 
 If you experience or witness behavior that violates this Code of Conduct:
 
-- Email: **<conduct@jscraik.dev>**
+- Email: **<jscraik@brainwav.io>**
 - If the concern is urgent and involves immediate safety risk, contact local emergency services first.
 
 ### What to include
@@ -68,7 +68,7 @@ Maintainers will consider context, severity, and whether this is a pattern.
 
 ## Appeals
 
-If you believe an enforcement action was incorrect, email **<conduct-appeals@jscraik.dev>** with:
+If you believe an enforcement action was incorrect, email **<jscraik@brainwav.io>** with:
 
 - The link/context
 - Why you believe the decision should be reconsidered

@@ -19,7 +19,7 @@ We provide security fixes for the following versions:
 Use one of these private reporting channels:
 
 1. **GitHub Security Advisories / Private Vulnerability Reporting** (preferred, if enabled)
-2. Email: **<security@jscraik.dev>**
+2. Email: **<jscraik@brainwav.io>**
 
 ### What to include
 
