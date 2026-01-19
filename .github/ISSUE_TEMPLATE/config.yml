@@ -1,0 +1,15 @@
+# .github/ISSUE_TEMPLATE/config.yml
+blank_issues_enabled: false
+
+contact_links:
+  - name: "Discussions / Q&A"
+    url: "https://github.com/jscraik/.github/discussions"
+    about: "Questions, support, and design discussion go here."
+
+  - name: "Security vulnerability report"
+    url: "https://github.com/jscraik/.github/security/policy"
+    about: "Report vulnerabilities privately via the Security Policy."
+
+  - name: "Documentation"
+    url: "https://github.com/jscraik/.github/wiki"
+    about: "Read docs / FAQs / troubleshooting."

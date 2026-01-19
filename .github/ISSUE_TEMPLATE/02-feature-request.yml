@@ -1,0 +1,68 @@
+name: "Feature request"
+description: "Suggest an idea / improvement"
+title: "[Feature]: "
+labels: ["type: feature", "status: needs-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement.
+
+        For usage questions/support, prefer **Discussions / Q&A**.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: "What problem are you solving? Who is impacted?"
+      placeholder: "As a <user>, I want <capability>, so that <outcome>."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: "Describe desired behavior, API/UX, and constraints."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: "What else did you try/consider?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: "Define what 'done' looks like (testable bullets)."
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / Compatibility / Security
+      description: "Breaking changes, migration, privacy/security concerns."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: "I searched existing issues/discussions and did not find a duplicate."
+          required: true
+        - label: "This is not a security vulnerability disclosure."
+          required: true
+        - label: "I'm willing to help implement this (code/docs/testing)."
+          required: false

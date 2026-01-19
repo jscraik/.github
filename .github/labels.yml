@@ -1,0 +1,157 @@
+# .github/labels.yml
+# Label Syncer manifest format: array of {name, description, color}
+# Colors are 6-hex without '#'.
+
+# --------------------
+# Type
+# --------------------
+- name: "type: bug"
+  description: "Defect or regression"
+  color: d73a4a
+- name: "type: feature"
+  description: "New capability or request"
+  color: a2eeef
+- name: "type: enhancement"
+  description: "Improvement to existing behavior"
+  color: a2eeef
+- name: "type: docs"
+  description: "Documentation changes"
+  color: 0075ca
+- name: "type: chore"
+  description: "Maintenance / non-user-facing work"
+  color: cfd3d7
+- name: "type: refactor"
+  description: "Code change that neither fixes a bug nor adds a feature"
+  color: cfd3d7
+- name: "type: perf"
+  description: "Performance improvement"
+  color: fbca04
+- name: "type: ci"
+  description: "CI/workflow changes"
+  color: 1d76db
+- name: "type: build"
+  description: "Build/packaging/release engineering"
+  color: 1d76db
+- name: "type: test"
+  description: "Tests only"
+  color: 1d76db
+- name: "type: security"
+  description: "Security hardening (do not disclose vulnerabilities in public issues)"
+  color: b60205
+
+# --------------------
+# Status (triage flow)
+# --------------------
+- name: "status: needs-triage"
+  description: "New/unreviewed by maintainers"
+  color: cfd3d7
+- name: "status: needs-info"
+  description: "Missing details; waiting on reporter"
+  color: cfd3d7
+- name: "status: blocked"
+  description: "Blocked by dependency / decision / external factor"
+  color: d93f0b
+- name: "status: ready"
+  description: "Ready for implementation or review"
+  color: 0e8a16
+- name: "status: in-progress"
+  description: "Actively being worked on"
+  color: 0e8a16
+- name: "status: wontfix"
+  description: "Will not be addressed"
+  color: ffffff
+
+# --------------------
+# Priority
+# --------------------
+- name: "priority: p0"
+  description: "Critical / drop-everything"
+  color: b60205
+- name: "priority: p1"
+  description: "High priority"
+  color: d93f0b
+- name: "priority: p2"
+  description: "Normal priority"
+  color: fbca04
+- name: "priority: p3"
+  description: "Low priority"
+  color: 0e8a16
+
+# --------------------
+# Size (PR sizing / planning)
+# --------------------
+- name: "size: XS"
+  description: "Tiny change (minutes)"
+  color: 5319e7
+- name: "size: S"
+  description: "Small change"
+  color: 5319e7
+- name: "size: M"
+  description: "Medium change"
+  color: 5319e7
+- name: "size: L"
+  description: "Large change"
+  color: 5319e7
+- name: "size: XL"
+  description: "Very large change (consider splitting)"
+  color: 5319e7
+
+# --------------------
+# Area (generic defaults; extend per repo)
+# --------------------
+- name: "area: docs"
+  description: "Documentation / examples"
+  color: 006b75
+- name: "area: api"
+  description: "Public API / interfaces"
+  color: 006b75
+- name: "area: ui"
+  description: "User interface"
+  color: 006b75
+- name: "area: cli"
+  description: "Command-line interface"
+  color: 006b75
+- name: "area: core"
+  description: "Core logic"
+  color: 006b75
+- name: "area: deps"
+  description: "Dependencies"
+  color: 006b75
+- name: "area: build"
+  description: "Build / packaging"
+  color: 006b75
+- name: "area: ci"
+  description: "CI workflows"
+  color: 006b75
+- name: "area: tests"
+  description: "Test suite"
+  color: 006b75
+
+# --------------------
+# Community / contribution
+# --------------------
+- name: "good first issue"
+  description: "Good for newcomers"
+  color: 7057ff
+- name: "help wanted"
+  description: "Extra attention is needed"
+  color: 008672
+
+# --------------------
+# Special handling
+# --------------------
+- name: "dependencies"
+  description: "Dependency updates"
+  color: 0366d6
+- name: "breaking-change"
+  description: "Introduces a breaking change / migration required"
+  color: b60205
+- name: "regression"
+  description: "Worked before; broken now"
+  color: d73a4a
+- name: "duplicate"
+  description: "Duplicate issue/PR"
+  color: cfd3d7
+- name: "invalid"
+  description: "Not a valid issue/PR"
+  color: e4e669

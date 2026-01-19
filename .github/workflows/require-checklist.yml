@@ -1,0 +1,19 @@
+# .github/workflows/require-checklist.yml
+name: PR checklist enforcement
+
+on:
+    pull_request:
+        types: [opened, edited, synchronize]
+
+permissions:
+    pull-requests: read
+
+jobs:
+    checklist:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: mheap/require-checklist-action@v2
+              with:
+                  requireChecklist: true
+                  skipDescriptionRegex: .*\(optional\).*
+                  skipDescriptionRegexFlags: i

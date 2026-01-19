@@ -1,0 +1,38 @@
+name: "Documentation"
+description: "Report missing/incorrect docs or propose improvements"
+title: "[Docs]: "
+labels: ["type: docs", "status: needs-triage"]
+
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong or missing?
+      description: "Be specific: page/section, what you expected, what you found."
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link / location
+      description: "URL, file path, or section name."
+      placeholder: "e.g., https://... or docs/usage.md#section"
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: "Suggested text, example, or structure."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: "I searched existing issues/discussions and did not find a duplicate."
+          required: true

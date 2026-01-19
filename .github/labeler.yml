@@ -1,0 +1,46 @@
+# .github/labeler.yml
+# Auto-label PRs based on changed file paths
+
+"area: docs":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**"
+          - "**/*.md"
+          - "**/*.mdx"
+
+"area: ci":
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/actions/**"
+
+"area: build":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/Dockerfile*"
+          - "**/Makefile"
+          - "**/pom.xml"
+          - "**/*.gradle*"
+          - "**/package.json"
+          - "**/pnpm-lock.yaml"
+          - "**/yarn.lock"
+          - "**/package-lock.json"
+
+"area: tests":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/tests/**"
+          - "**/*.spec.*"
+          - "**/*.test.*"
+          - "**/__tests__/**"
+
+"area: deps":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/package-lock.json"
+          - "**/pnpm-lock.yaml"
+          - "**/yarn.lock"
+          - "**/go.sum"
+          - "**/Cargo.lock"
+          - "**/poetry.lock"
+          - "**/requirements*.txt"

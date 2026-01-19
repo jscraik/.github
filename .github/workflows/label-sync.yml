@@ -1,0 +1,55 @@
+# .github/workflows/label-sync.yml
+name: Sync labels (org-wide)
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - ".github/labels.yml"
+            - ".github/workflows/label-sync.yml"
+
+permissions:
+    contents: read
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Sync labels to repositories
+              uses: micnncim/action-label-syncer@v1
+              with:
+                  manifest: .github/labels.yml
+
+                  # IMPORTANT:
+                  # - For cross-repo operations, use a PAT (fine-grained preferred) in secrets.
+                  # - The default GITHUB_TOKEN typically cannot write to other repos.
+                  token: ${{ secrets.LABEL_SYNC_TOKEN }}
+
+                  # List repos to sync. Keep this list authoritative.
+                  repository: |
+                      jscraik/aStudio
+                      jscraik/CodexMonitor
+                      jscraik/ralph-gold
+                      jscraik/SkillsInspector
+                      jscraik/wSearch
+                      jscraik/Agent-Skills
+                      jscraik/xKit
+                      jscraik/recon-workbench
+                      jscraik/gKit
+                      jscraik/jscraik
+                      jscraik/rSearch
+                      jscraik/CortexD
+                      jscraik/xmKit
+                      jscraik/zSearch
+                      jscraik/CortexA
+                      jscraik/sbrainwav-governance-canary
+                      jscraik/prompt-op
+                      jscraik/Cortex-OS
+                      jscraik/brainwav-code-ios-ap
+                      jscraik/ai-engineering-roadmap
+
+                  # Safety: start with prune disabled to avoid deleting existing labels unexpectedly.
+                  # Once stable, set prune: true to enforce exact label parity.
+                  prune: false

@@ -1,0 +1,116 @@
+name: "Bug report"
+description: "Report a reproducible problem"
+title: "[Bug]: "
+labels: ["type: bug", "status: needs-triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+
+        **Security note:** If you believe this is a security vulnerability, do **not** file it publicly.
+        Use the **Security vulnerability report** link instead.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "What happened, and what did you expect?"
+      placeholder: "Clear, concise description."
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: "Exact steps so we can reproduce."
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / Commit SHA
+      description: "Release tag, commit hash, container image tag, etc."
+      placeholder: "e.g., v1.2.3 or 1a2b3c4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "OS, arch, runtime, and anything relevant."
+      placeholder: |
+        - OS:
+        - CPU/Arch:
+        - Runtime (node/go/python/java/etc):
+        - Install method (pkg manager/container/source):
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / traces
+      description: "Paste logs or attach files."
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: regression
+    attributes:
+      label: Regression?
+      description: "Did this work in a previous version?"
+      options:
+        - "Unknown"
+        - "Yes (worked before)"
+        - "No (never worked)"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - "Blocking"
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight checklist
+      description: "Please confirm:"
+      options:
+        - label: "I searched existing issues/discussions and did not find a duplicate."
+          required: true
+        - label: "This is not a security vulnerability disclosure."
+          required: true
+        - label: "I agree to follow this project's Code of Conduct."
+          required: true

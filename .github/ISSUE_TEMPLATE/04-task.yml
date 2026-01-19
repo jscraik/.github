@@ -1,0 +1,30 @@
+name: "Task"
+description: "Internal work item / maintenance task"
+title: "[Task]: "
+labels: ["type: chore", "status: needs-triage"]
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Task description
+      description: "What needs to be done and why?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition of done
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / context
+    validations:
+      required: false
