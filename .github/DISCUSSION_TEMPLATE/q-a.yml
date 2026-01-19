@@ -1,0 +1,61 @@
+title: "[Q&A] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this category for questions and help requests.
+        For security vulnerabilities, do **not** post here—see SECURITY.md.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What are you trying to do, and what's happening?
+      placeholder: Clear question + expected outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you've tried
+      description: Commands, configs, links, and troubleshooting steps you already attempted.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / Commit SHA
+      placeholder: "e.g., v1.2.3 or 1a2b3c4"
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - OS:
+        - Runtime (node/go/python/etc):
+        - Install method:
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / output (redact secrets)
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing discussions/issues for duplicates.
+          required: true
+        - label: I did not include secrets (tokens, keys, passwords).
+          required: true

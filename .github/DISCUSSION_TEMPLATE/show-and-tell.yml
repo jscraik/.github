@@ -1,0 +1,39 @@
+title: "[Show & Tell] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share something you built with this project (plugins, integrations, examples, write-ups).
+
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: Repo/demo/blog post link.
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you build?
+      description: What it does, who it's for, why it's useful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / clips (optional)
+      description: Paste images or links.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I have permission to share this content publicly.
+          required: true

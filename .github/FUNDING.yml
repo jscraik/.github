@@ -1,0 +1,27 @@
+# .github/FUNDING.yml
+
+# GitHub Sponsors (one org + up to 4 maintainers)
+github: [jscraik]
+# Open Collective
+# open_collective: YOUR-COLLECTIVE
+
+# Patreon
+# patreon: YOUR-PATREON
+
+# Ko-fi
+# ko_fi: YOUR-KOFI
+
+# Polar
+# polar: YOUR-POLAR
+
+# Buy Me a Coffee
+# buy_me_a_coffee: YOUR-BMC
+
+# thanks.dev (use the "u/gh/USERNAME" format)
+# thanks_dev: "u/gh/jscraik"
+
+# Up to 4 custom URLs
+# If a URL contains ':', wrap it in quotes.
+# custom:
+#   - "https://jscraik.dev/sponsor"
+#   - "https://paypal.me/jscraik"

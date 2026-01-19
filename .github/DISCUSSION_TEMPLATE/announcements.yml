@@ -1,0 +1,39 @@
+title: "[Announcement] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maintainers: use this template for releases, deprecations, and major updates.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One-paragraph overview.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Include key changes, impact, migration notes, and links.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / tag / date
+      placeholder: "e.g., v2.4.0"
+    validations:
+      required: false
+
+  - type: input
+    id: links
+    attributes:
+      label: Links
+      description: Release notes, changelog, docs, etc.
+      placeholder: "https://..."
+    validations:
+      required: false

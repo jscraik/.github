@@ -34,6 +34,22 @@ This repository provides default templates and automation for all repositories i
 - **require-checklist.yml** - Ensures PR checklist completion
 - **pr-labeler.yml** - Auto-labels PRs based on changed files
 
+### Community Health Files
+
+- **CODE_OF_CONDUCT.md** - Community behavior expectations and enforcement
+- **CONTRIBUTING.md** - Contribution guidelines and PR requirements
+- **SECURITY.md** - Vulnerability reporting and security policy
+- **SUPPORT.md** - Where to get help and ask questions
+- **GOVERNANCE.md** - Project roles and decision-making process
+- **FUNDING.yml** - Sponsorship and funding options
+
+### Discussion Templates
+
+- **Q&A** (`q-a.yml`) - Structured help requests
+- **Ideas** (`ideas.yml`) - Feature proposals and improvements
+- **Announcements** (`announcements.yml`) - Release notes and major updates
+- **Show & Tell** (`show-and-tell.yml`) - Community showcases
+
 ## Setup Instructions
 
 ### 1. Create this repository
