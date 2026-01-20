@@ -34,6 +34,23 @@ Closes #
 - [ ] I understand what the code does and can explain it
 - [ ] Prompts or session logs included (Optional, but helpful)
 
+<details>
+<summary>AI Session Log (click to expand)</summary>
+
+### Initial prompt
+<!-- What you first asked the AI -->
+
+### Key iterations
+<!-- List major changes or refinements you requested -->
+1.
+2.
+3.
+
+### Final verification
+<!-- How you verified you understand the code -->
+
+</details>
+
 ## Checklist
 
 - [ ] Linked an issue or explained why none exists
