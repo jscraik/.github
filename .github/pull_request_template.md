@@ -27,6 +27,13 @@ Closes #
 - [ ] No security impact
 - [ ] Security impact (describe at a high level; do NOT disclose vulnerabilities publicly)
 
+## AI assistance
+
+- [ ] This PR was created with AI assistance (mark with `[AI]` in title if applicable)
+- [ ] Testing level: untested / lightly tested / fully tested
+- [ ] I understand what the code does and can explain it
+- [ ] Prompts or session logs included (Optional, but helpful)
+
 ## Checklist
 
 - [ ] Linked an issue or explained why none exists

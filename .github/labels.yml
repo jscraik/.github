@@ -155,3 +155,9 @@
 - name: "invalid"
   description: "Not a valid issue/PR"
   color: e4e669
+- name: "ai-assisted"
+  description: "Created or significantly modified with AI assistance"
+  color: 7c3aed
+- name: "needs-human-review"
+  description: "Requires careful human review (AI-generated or complex)"
+  color: f59e0b
