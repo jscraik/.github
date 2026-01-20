@@ -1,31 +1,39 @@
-<!-- PRs should be small, reviewable, and well-tested.
-
-REQUIRED for merge (enforced by CI):
-- PR title follows Conventional Commits (see PR checks)
-- All non-optional checklist items are checked -->
+<!-- .github/PULL_REQUEST_TEMPLATE.md -->
 
 ## Summary
-<!-- What does this change do? -->
+
+[PROMPT: What does this PR do in 1–3 sentences?]
 
 ## Motivation / Context
-<!-- Why is this change needed? -->
-Closes #
+
+[PROMPT: Why is this change needed? Link context, incidents, or user feedback.]
+
+Closes #[PROMPT: #123] (or explain why none exists)
 
 ## What changed?
-<!-- Bullet list of key changes -->
+
+[PROMPT: Bullet list of key changes.]
 
 ## How to test
-<!-- Provide a concrete test plan: commands, steps, environments, and expected results -->
+
+[PROMPT: Exact commands + expected outcomes.]
+
+- [PROMPT: e.g. pnpm test]
+- [PROMPT: e.g. pnpm lint]
+- [PROMPT: e.g. pnpm build]
 
 ## Risk & rollout
 
-- Risk level: low / medium / high
-- Rollback plan:
+Risk level: low / medium / high
+
+Rollback plan: [PROMPT: Concrete rollback steps if needed.]
 
 ## Security / privacy
 
 - [ ] No security impact
 - [ ] Security impact (describe at a high level; do NOT disclose vulnerabilities publicly)
+
+[PROMPT: High-level description if security impact checked.]
 
 ## AI assistance
 
@@ -34,20 +42,19 @@ Closes #
 - [ ] I understand what the code does and can explain it
 - [ ] Prompts or session logs included (Optional, but helpful)
 
+Prompt: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`  
+Session: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
+
 <details>
 <summary>AI Session Log (click to expand)</summary>
 
-### Initial prompt
-<!-- What you first asked the AI -->
+[PROMPT: Short AI session summary]
 
-### Key iterations
-<!-- List major changes or refinements you requested -->
-1.
-2.
-3.
-
-### Final verification
-<!-- How you verified you understand the code -->
+- Log file: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
+- Prompt file: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`
+- Files touched: [PROMPT: paths]
+- Tests run: [PROMPT: commands]
+- Human verification: [PROMPT: what you personally checked]
 
 </details>
 
@@ -61,5 +68,5 @@ Closes #
 - [ ] Confirmed CI is green (or explained failures)
 
 ## Release notes
-<!-- If user-facing, write a short sentence. Otherwise "N/A". -->
-Release note:
+
+Release note: [PROMPT: user-facing note, or "None".]
