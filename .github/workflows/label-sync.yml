@@ -17,6 +17,8 @@ jobs:
         steps:
             - uses: actions/checkout@v4
 
+            - name: Ensure GitHub CLI is installed
+              run: bash scripts/ensure-gh-cli.sh
             - name: Sync labels to repositories
               uses: micnncim/action-label-syncer@v1
               with:
