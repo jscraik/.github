@@ -29,3 +29,5 @@ jobs:
                       revert
                   ignoreLabels: |
                       ignore-semantic-pull-request
+            - name: Ensure GitHub CLI is installed
+              run: bash scripts/ensure-gh-cli.sh

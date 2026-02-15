@@ -110,3 +110,24 @@ Individual repos can:
 - [GitHub Docs: Creating default community health files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Label Syncer Action](https://github.com/micnncim/action-label-syncer)
+
+<!-- AGENT-FIRST-WORKFLOW:START -->
+## Agent-first workflow
+
+1. Create/update implementation plan using `.agent/PLANS.md` contract.
+2. Validate plan graph:
+
+```bash
+python3 /Users/jamiecraik/.codex/scripts/plan-graph-lint.py .agent/PLANS.md
+```
+
+3. Run canonical verification:
+
+```bash
+/Users/jamiecraik/.codex/scripts/verify-work.sh
+```
+
+4. Follow global scaffold policy:
+
+- `/Users/jamiecraik/.codex/instructions/agent-first-scaffold-spec.md`
+<!-- AGENT-FIRST-WORKFLOW:END -->
