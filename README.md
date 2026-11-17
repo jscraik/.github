@@ -1,10 +1,10 @@
 # .github Repository
 
-Organization-wide GitHub community health files and workflow templates.
+GitHub community health defaults and workflow templates for the jscraik account.
 
 ## What's in here
 
-This repository provides default templates and automation for all repositories in the organization:
+This repository provides community health defaults and workflow files. Each repository configures its own checks.
 
 ### Issue Templates
 
@@ -15,9 +15,11 @@ This repository provides default templates and automation for all repositories i
 
 ### PR Template
 
-- Standardized PR description with checklist enforcement
-- Security/privacy considerations
-- Release notes section
+- The [shared PR template](.github/pull_request_template.md) covers summary,
+  impact and risk, evidence, reviewer focus, and readiness.
+- Complete its required checklist item after recording applicable validation and
+  any limitations. The checklist workflow runs where installed. Each repository
+  owns its validation commands, receipts, and branch protection.
 
 ### Label System
 
@@ -52,17 +54,13 @@ This repository provides default templates and automation for all repositories i
 
 ## Setup Instructions
 
-### 1. Create this repository
-
-Create a repository named `.github` in your organization. GitHub will automatically use these files as defaults for all repos.
-
-### 2. Configure label sync
+### 1. Configure label sync
 
 1. Create a Personal Access Token (PAT) with `repo` scope
 2. Add it as a secret named `LABEL_SYNC_TOKEN` in this repository
 3. Edit `.github/workflows/label-sync.yml` and add your repositories to the `repository:` list
 
-### 3. Enable branch protection
+### 2. Enable branch protection
 
 For each repository (or org-wide via rulesets):
 
@@ -72,9 +70,9 @@ For each repository (or org-wide via rulesets):
   - `PR checklist enforcement`
 - Require branches to be up to date
 
-### 4. Test it
+### 3. Test it
 
-1. Create a test PR in any repo
+1. Create a test PR in a repository without its own PR template
 2. Verify the PR template appears
 3. Check that workflows run
 4. Confirm labels are applied
@@ -86,9 +84,9 @@ GitHub looks for community health files in this order:
 1. Target repo's `.github/` folder
 2. Target repo's root
 3. Target repo's `docs/` folder
-4. **Organization's `.github` repo** (this one)
+4. **Account’s `.github` repository** (this one)
 
-If a repo has its own `.github/ISSUE_TEMPLATE/` folder, it completely overrides the org defaults for that repo.
+If a repo has its own `.github/ISSUE_TEMPLATE/` folder, it completely overrides the account defaults for that repo.
 
 ## Customization per repo
 

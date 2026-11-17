@@ -1,72 +1,36 @@
-<!-- .github/PULL_REQUEST_TEMPLATE.md -->
+<!-- Shared five-section PR structure for repositories that adopt it.
+Keep repository-specific attestations and executable requirements in the
+repository's own template and instructions. This file does not authorize a PR. -->
 
 ## Summary
 
-[PROMPT: What does this PR do in 1–3 sentences?]
+<!-- State the problem, chosen approach and resulting behaviour. Include material
+scope exclusions and essential context, even when linking a design document. -->
 
-## Motivation / Context
+## Impact and risk
 
-[PROMPT: Why is this change needed? Link context, incidents, or user feedback.]
+- **Boundaries:** <!-- Explain affected public API, schema, provider, runtime,
+distribution and compatibility surfaces. Group unchanged surfaces concisely. -->
+- **Merge risk and recovery:** <!-- Name affected consumers and blast radius.
+State the supported recovery action and whether rollback was tested. -->
 
-Closes #[PROMPT: #123] (or explain why none exists)
+## Evidence
 
-## What changed?
+- **Behaviour:** <!-- Give before and after evidence from the actual entry point.
+Label source analysis and supplied results; never invent a failing before run. -->
+- **Validation:** <!-- Give exact commands, outcomes, tested revision and evidence
+references. Distinguish local checks from hosted CI. -->
+- **Limitations:** <!-- State skipped, blocked, untested and uncertain paths. -->
 
-[PROMPT: Bullet list of key changes.]
+## Reviewer focus
 
-## How to test
+<!-- Identify the decisions, assumptions, boundaries or files needing attention. -->
 
-[PROMPT: Exact commands + expected outcomes.]
+## Readiness
 
-- [PROMPT: e.g. pnpm test]
-- [PROMPT: e.g. pnpm lint]
-- [PROMPT: e.g. pnpm build]
+- **Receipts:** <!-- Report only applicable, current-head receipt states. -->
+- **Guarded body refresh:** <!-- Report the actual helper outcome, or n.a. with reason. -->
+- **Hosted checks and independent review:** <!-- Report actual states and revisions. -->
+- **Unresolved findings:** <!-- Report findings, dispositions and blockers. -->
 
-## Risk & rollout
-
-Risk level: low / medium / high
-
-Rollback plan: [PROMPT: Concrete rollback steps if needed.]
-
-## Security / privacy
-
-- [ ] No security impact
-- [ ] Security impact (describe at a high level; do NOT disclose vulnerabilities publicly)
-
-[PROMPT: High-level description if security impact checked.]
-
-## AI assistance
-
-- [ ] This PR was created with AI assistance (mark with `[AI]` in title if applicable)
-- [ ] Testing level: untested / lightly tested / fully tested
-- [ ] I understand what the code does and can explain it
-- [ ] Prompts or session logs included (Optional, but helpful)
-
-Prompt: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`  
-Session: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
-
-<details>
-<summary>AI Session Log (click to expand)</summary>
-
-[PROMPT: Short AI session summary]
-
-- Log file: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
-- Prompt file: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`
-- Files touched: [PROMPT: paths]
-- Tests run: [PROMPT: commands]
-- Human verification: [PROMPT: what you personally checked]
-
-</details>
-
-## Checklist
-
-- [ ] Linked an issue or explained why none exists
-- [ ] Added/updated tests or explained why not
-- [ ] Updated docs where needed (Optional)
-- [ ] Considered backward compatibility / migrations (Optional)
-- [ ] Verified no secrets are committed (tokens, keys, passwords)
-- [ ] Confirmed CI is green (or explained failures)
-
-## Release notes
-
-Release note: [PROMPT: user-facing note, or "None".]
+- [ ] I recorded the applicable validation results and any limitations above.
