@@ -6,6 +6,7 @@ on:
         types: [opened, edited, synchronize]
 
 permissions:
+    contents: read
     pull-requests: read
 
 jobs:
@@ -17,5 +18,8 @@ jobs:
                   requireChecklist: true
                   skipDescriptionRegex: .*\(optional\).*
                   skipDescriptionRegexFlags: i
+            - uses: actions/checkout@v4
+              with:
+                  persist-credentials: false
             - name: Ensure GitHub CLI is installed
               run: bash scripts/ensure-gh-cli.sh
