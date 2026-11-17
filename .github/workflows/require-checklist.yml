@@ -17,5 +17,3 @@ jobs:
                   requireChecklist: true
                   skipDescriptionRegex: .*\(optional\).*
                   skipDescriptionRegexFlags: i
-            - name: Ensure GitHub CLI is installed
-              run: bash scripts/ensure-gh-cli.sh
