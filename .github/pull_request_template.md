@@ -27,7 +27,7 @@ proposed behaviour. A short diff, tree or sentence may be enough.
 ## Evidence
 
 - **Behaviour:** <!-- Show before and after with a test, output, screenshot or source comparison. Label inferred behaviour and identify the entry point and environment when relevant. -->
-- **Validation:** <!-- Identify the tested revision and link to evidence where available. Distinguish local results from hosted checks. -->
+- **Validation:** <!-- Identify the tested commit. List each exact validation command and its outcome. Keep hosted checks pending until GitHub reports results for that commit. -->
 <!-- Add a line for each applicable command. Use the repository's real commands.
 - Command: `<exact command>` -> pass
 - Command: `<exact command>` -> blocked (concrete reason)
@@ -42,7 +42,7 @@ Use fail or not run as appropriate. Explain what remains unverified. -->
 
 - **Receipts:** <!-- State applicable create and update receipt outcomes for this head, or n.a. with a reason. -->
 - **Guarded body refresh:** <!-- State the actual helper outcome, or n.a. with a reason. -->
-- **Hosted checks and independent review:** <!-- Give current-head outcomes and required reviewers' status. Use pending or unverified where appropriate. -->
+- **Hosted checks and independent review:** <!-- Record outcomes for the current PR commit. A requested review stays pending until the reviewer publishes a completed verdict. -->
 - **Unresolved findings:** <!-- Link outstanding findings or say none only after checking. -->
 
 - [ ] I recorded the applicable validation results and any limitations above.

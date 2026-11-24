@@ -60,22 +60,30 @@ This repository provides community health defaults and workflow files. Each repo
 2. Add it as a secret named `LABEL_SYNC_TOKEN` in this repository
 3. Edit `.github/workflows/label-sync.yml` and add your repositories to the `repository:` list
 
-### 2. Enable branch protection
+### 2. Install and verify the checks
+
+For repositories that use the shared title and checklist checks, install
+`pr-title.yml` and `require-checklist.yml` in the target repository's
+`.github/workflows/` directory. GitHub inherits the PR template from this account
+repository. Each workflow runs only where installed.
+
+Open a test PR and confirm that both workflows report their check runs. Use the
+check names GitHub reports for that repository when configuring branch protection.
+
+### 3. Enable branch protection
 
 For each repository (or org-wide via rulesets):
 
 - Require pull request reviews
-- Require status checks:
-  - `PR title lint (Conventional Commits)`
-  - `PR checklist enforcement`
+- Require the verified status checks for `PR title lint (Conventional Commits)`
+  and `PR checklist enforcement` where those workflows are used.
 - Require branches to be up to date
 
-### 3. Test it
+### 4. Verify template inheritance
 
-1. Create a test PR in a repository without its own PR template
-2. Verify the PR template appears
-3. Check that workflows run
-4. Confirm labels are applied
+1. Open the new pull request form in a repository without its own PR template.
+2. Verify that GitHub prefills the shared template.
+3. For repositories with automated labelling, verify labels on a submitted test PR.
 
 ## How it works
 
