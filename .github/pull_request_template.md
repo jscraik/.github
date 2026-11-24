@@ -1,36 +1,48 @@
-<!-- Shared five-section PR structure for repositories that adopt it.
-Keep repository-specific attestations and executable requirements in the
-repository's own template and instructions. This file does not authorize a PR. -->
+<!--
+Write for maintainers. Keep each answer short and use project terms.
+Use the target repository's required fields and checks where applicable.
+For an inapplicable required field, write n.a. and give the reason.
+Keep credentials, raw transcripts and private local paths out of the PR.
+-->
 
 ## Summary
 
-<!-- State the problem, chosen approach and resulting behaviour. Include material
-scope exclusions and essential context, even when linking a design document. -->
+<!--
+State the problem and the behaviour after this change. Include scope exclusions
+when they affect review.
+
+Optional State Map: if the change is easier to review visually, add one small,
+editable Mermaid diagram here. Use a connection map for ownership or boundaries,
+a workflow or sequence for order, or a state diagram for the lifecycle of one
+entity. Label meaningful triggers, conditions and failure or recovery paths.
+Add a plain-language walkthrough, cite the source or contract and identify
+proposed behaviour. A short diff, tree or sentence may be enough.
+-->
 
 ## Impact and risk
 
-- **Boundaries:** <!-- Explain affected public API, schema, provider, runtime,
-distribution and compatibility surfaces. Group unchanged surfaces concisely. -->
-- **Merge risk and recovery:** <!-- Name affected consumers and blast radius.
-State the supported recovery action and whether rollback was tested. -->
+- **Boundaries:** <!-- Describe the blast radius. Who or what could be affected, including downstream consumers? Consider layout shifts, mobile behaviour, API or schema compatibility, providers, runtime, distribution and data where relevant. -->
+- **Merge risk and recovery:** <!-- Is this a two-way door (straightforward to undo), a one-way door (destructive or hard to reverse), or is reversibility still unverified? Explain how to roll back, what reverting the code cannot undo, and whether recovery was tested. -->
 
 ## Evidence
 
-- **Behaviour:** <!-- Give before and after evidence from the actual entry point.
-Label source analysis and supplied results; never invent a failing before run. -->
-- **Validation:** <!-- Give exact commands, outcomes, tested revision and evidence
-references. Distinguish local checks from hosted CI. -->
-- **Limitations:** <!-- State skipped, blocked, untested and uncertain paths. -->
+- **Behaviour:** <!-- Show before and after with a test, output, screenshot or source comparison. Label inferred behaviour and identify the entry point and environment when relevant. -->
+- **Validation:** <!-- Identify the tested revision and link to evidence where available. Distinguish local results from hosted checks. -->
+<!-- Add a line for each applicable command. Use the repository's real commands.
+- Command: `<exact command>` -> pass
+- Command: `<exact command>` -> blocked (concrete reason)
+Use fail or not run as appropriate. Explain what remains unverified. -->
+- **Limitations:** <!-- Record material paths still untested or blocked. Use n.a. with a reason when there are none to record. -->
 
 ## Reviewer focus
 
-<!-- Identify the decisions, assumptions, boundaries or files needing attention. -->
+<!-- Name the decision, boundary or file that needs attention. Use n.a. with a reason if there is no special focus. -->
 
 ## Readiness
 
-- **Receipts:** <!-- Report only applicable, current-head receipt states. -->
-- **Guarded body refresh:** <!-- Report the actual helper outcome, or n.a. with reason. -->
-- **Hosted checks and independent review:** <!-- Report actual states and revisions. -->
-- **Unresolved findings:** <!-- Report findings, dispositions and blockers. -->
+- **Receipts:** <!-- State applicable create and update receipt outcomes for this head, or n.a. with a reason. -->
+- **Guarded body refresh:** <!-- State the actual helper outcome, or n.a. with a reason. -->
+- **Hosted checks and independent review:** <!-- Give current-head outcomes and required reviewers' status. Use pending or unverified where appropriate. -->
+- **Unresolved findings:** <!-- Link outstanding findings or say none only after checking. -->
 
 - [ ] I recorded the applicable validation results and any limitations above.
