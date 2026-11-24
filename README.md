@@ -85,6 +85,43 @@ For each repository (or org-wide via rulesets):
 2. Verify that GitHub prefills the shared template.
 3. For repositories with automated labelling, verify labels on a submitted test PR.
 
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:3e8008b45773b78253ec71ba8d08715119c5e60ea9fb890437aa1b69959c7221 -->
+
+### Validation evidence
+
+These local source checks ran in Bash against commit
+`dd05be13e1173ba0531e9abcb9594dfeffe05c73`. They don’t verify hosted workflow runs or branch protection settings.
+
+**Setup order — PASS (exit 0)**
+
+```bash
+git show dd05be13e1173ba0531e9abcb9594dfeffe05c73:README.md | awk '/^### 2\. Install and verify the checks$/ {i=NR} /^Open a test PR and confirm that both workflows report their check runs\./ {v=NR} /^### 3\. Enable branch protection$/ {p=NR} END {exit !(i && i<v && v<p)}'
+```
+
+**Template headings — PASS (exit 0)**
+
+```bash
+diff -u <(printf '%s\n' '## Summary' '## Impact and risk' '## Evidence' '## Reviewer focus' '## Readiness') <(git grep -h '^## ' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- .github/pull_request_template.md)
+```
+
+**Template checkbox — PASS (exit 0)**
+
+```bash
+diff -u <(printf '%s\n' '- [ ] I recorded the applicable validation results and any limitations above.') <(git grep -hE '^[[:blank:]]*[-*+] \[[ xX]\]' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- .github/pull_request_template.md)
+```
+
+**Artifact guidance — PASS (exit 0)**
+
+```bash
+git grep -Fn 'Add an AI assistance entry under **Evidence** with the repository-relative' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- CLAUDE.md && git grep -Fn 'Add the committed repository-relative paths to an AI assistance entry under PR **Evidence**.' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- ai/README.md
+```
+
+The earlier checklist controls proof at `2454ad7` applies only to the workflow’s handling of optional controls.
+
+<!-- /coderabbit-ai-generated:v1 -->
+
 ## How it works
 
 GitHub looks for community health files in this order:
