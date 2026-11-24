@@ -20,13 +20,9 @@ Claude must:
    git add ai/prompts/YYYY-MM-DD-<slug>.yaml ai/sessions/YYYY-MM-DD-<slug>.json
    ```
 
-3. **Reference exact paths in PR body**:
-   - Under **AI assistance** section:
-     - Prompt: `ai/prompts/YYYY-MM-DD-<slug>.yaml`
-     - Session: `ai/sessions/YYYY-MM-DD-<slug>.json`
-   - In **AI Session Log** details:
-     - Log file: `ai/sessions/YYYY-MM-DD-<slug>.json`
-     - Prompt file: `ai/prompts/YYYY-MM-DD-<slug>.yaml`
+3. **Reference the committed artifact paths in the PR body**:
+   - Add an AI assistance entry under **Evidence** with the repository-relative
+     prompt and session summary paths.
 
 4. **Do NOT**:
    - Embed prompt/log excerpts in the PR body
@@ -41,4 +37,5 @@ See `ai/prompts/.template.yaml` and `ai/sessions/.template.json` for required fi
 
 ## PR Template
 
-All PRs must use `.github/PULL_REQUEST_TEMPLATE.md` which includes required AI disclosure sections.
+Use the [shared PR template](.github/pull_request_template.md). Record this
+repository's AI assistance evidence under **Evidence** when applicable.

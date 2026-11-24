@@ -1,10 +1,10 @@
 # .github Repository
 
-Organization-wide GitHub community health files and workflow templates.
+GitHub community health defaults and workflow templates for the jscraik account.
 
 ## What's in here
 
-This repository provides default templates and automation for all repositories in the organization:
+This repository provides community health defaults and workflow files. Each repository configures its own checks.
 
 ### Issue Templates
 
@@ -15,9 +15,11 @@ This repository provides default templates and automation for all repositories i
 
 ### PR Template
 
-- Standardized PR description with checklist enforcement
-- Security/privacy considerations
-- Release notes section
+- The [shared PR template](.github/pull_request_template.md) covers summary,
+  impact and risk, evidence, reviewer focus, and readiness.
+- Complete its required checklist item after recording applicable validation and
+  any limitations. The checklist workflow runs where installed. Each repository
+  owns its validation commands, receipts, and branch protection.
 
 ### Label System
 
@@ -52,32 +54,73 @@ This repository provides default templates and automation for all repositories i
 
 ## Setup Instructions
 
-### 1. Create this repository
-
-Create a repository named `.github` in your organization. GitHub will automatically use these files as defaults for all repos.
-
-### 2. Configure label sync
+### 1. Configure label sync
 
 1. Create a Personal Access Token (PAT) with `repo` scope
 2. Add it as a secret named `LABEL_SYNC_TOKEN` in this repository
 3. Edit `.github/workflows/label-sync.yml` and add your repositories to the `repository:` list
+
+### 2. Install and verify the checks
+
+For repositories that use the shared title and checklist checks, install
+`pr-title.yml` and `require-checklist.yml` in the target repository's
+`.github/workflows/` directory. GitHub inherits the PR template from this account
+repository. Each workflow runs only where installed.
+
+Open a test PR and confirm that both workflows report their check runs. Use the
+check names GitHub reports for that repository when configuring branch protection.
 
 ### 3. Enable branch protection
 
 For each repository (or org-wide via rulesets):
 
 - Require pull request reviews
-- Require status checks:
-  - `PR title lint (Conventional Commits)`
-  - `PR checklist enforcement`
+- Require the verified status checks for `PR title lint (Conventional Commits)`
+  and `PR checklist enforcement` where those workflows are used.
 - Require branches to be up to date
 
-### 4. Test it
+### 4. Verify template inheritance
 
-1. Create a test PR in any repo
-2. Verify the PR template appears
-3. Check that workflows run
-4. Confirm labels are applied
+1. Open the new pull request form in a repository without its own PR template.
+2. Verify that GitHub prefills the shared template.
+3. For repositories with automated labelling, verify labels on a submitted test PR.
+
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:3e8008b45773b78253ec71ba8d08715119c5e60ea9fb890437aa1b69959c7221 -->
+
+### Validation evidence
+
+These local source checks ran in Bash against commit
+`dd05be13e1173ba0531e9abcb9594dfeffe05c73`. They don’t verify hosted workflow runs or branch protection settings.
+
+**Setup order — PASS (exit 0)**
+
+```bash
+git show dd05be13e1173ba0531e9abcb9594dfeffe05c73:README.md | awk '/^### 2\. Install and verify the checks$/ {i=NR} /^Open a test PR and confirm that both workflows report their check runs\./ {v=NR} /^### 3\. Enable branch protection$/ {p=NR} END {exit !(i && i<v && v<p)}'
+```
+
+**Template headings — PASS (exit 0)**
+
+```bash
+diff -u <(printf '%s\n' '## Summary' '## Impact and risk' '## Evidence' '## Reviewer focus' '## Readiness') <(git grep -h '^## ' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- .github/pull_request_template.md)
+```
+
+**Template checkbox — PASS (exit 0)**
+
+```bash
+diff -u <(printf '%s\n' '- [ ] I recorded the applicable validation results and any limitations above.') <(git grep -hE '^[[:blank:]]*[-*+] \[[ xX]\]' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- .github/pull_request_template.md)
+```
+
+**Artifact guidance — PASS (exit 0)**
+
+```bash
+git grep -Fn 'Add an AI assistance entry under **Evidence** with the repository-relative' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- CLAUDE.md && git grep -Fn 'Add the committed repository-relative paths to an AI assistance entry under PR **Evidence**.' dd05be13e1173ba0531e9abcb9594dfeffe05c73 -- ai/README.md
+```
+
+The earlier checklist controls proof at `2454ad7` applies only to the workflow’s handling of optional controls.
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 ## How it works
 
@@ -86,9 +129,9 @@ GitHub looks for community health files in this order:
 1. Target repo's `.github/` folder
 2. Target repo's root
 3. Target repo's `docs/` folder
-4. **Organization's `.github` repo** (this one)
+4. **Account’s `.github` repository** (this one)
 
-If a repo has its own `.github/ISSUE_TEMPLATE/` folder, it completely overrides the org defaults for that repo.
+If a repo has its own `.github/ISSUE_TEMPLATE/` folder, it completely overrides the account defaults for that repo.
 
 ## Customization per repo
 

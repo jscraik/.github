@@ -20,7 +20,7 @@ When creating a PR with AI assistance:
 
 1. **Prompt file**: Save final prompt to `ai/prompts/YYYY-MM-DD-<slug>.yaml`
 2. **Session log**: Save summary to `ai/sessions/YYYY-MM-DD-<slug>.json`
-3. **Reference**: Add file paths to PR "AI assistance" section
+3. **Reference**: Add the committed repository-relative paths to an AI assistance entry under PR **Evidence**.
 
 See template files:
 - `ai/prompts/.template.yaml`

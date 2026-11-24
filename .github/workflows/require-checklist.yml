@@ -15,5 +15,7 @@ jobs:
             - uses: mheap/require-checklist-action@v2
               with:
                   requireChecklist: true
-                  skipDescriptionRegex: .*\(optional\).*
+                  # CodeRabbit emits these four optional controls as task-list entries.
+                  # Keep enforcing all other checklist items in descriptions and comments.
+                  skipDescriptionRegex: '.*\(optional\).*|^<!-- \{"checkboxId":\s*"[0-9a-f-]{36}",\s*"radioGroupId":\s*"utg-output-choice-group-(?:[0-9]+|unknown_comment_id)"\} --> (?:Commit to this branch|Create a new PR)$|^<!-- \{"checkboxId":"custom-finishing-touch:harness%20docs%20parity-create-pr"\} --> harness docs parity$|^<!-- \{"checkboxId":\s*"[0-9a-f-]{36}"\} --> <strong title="Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts">Autofix</strong> · Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts$'
                   skipDescriptionRegexFlags: i
