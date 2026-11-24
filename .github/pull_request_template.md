@@ -27,7 +27,7 @@ proposed behaviour. A short diff, tree or sentence may be enough.
 ## Evidence
 
 - **Behaviour:** <!-- Show before and after with a test, output, screenshot or source comparison. Label inferred behaviour and identify the entry point and environment when relevant. -->
-- **Validation:** <!-- Identify the tested commit. List each exact validation command and its outcome. Keep hosted checks pending until GitHub reports results for that commit. -->
+- **Validation:** <!-- Identify the reviewed commit and the tested commit if different. List each exact validation command and its outcome: pass, fail, blocked, or not run. Keep hosted checks pending until GitHub reports results for the reviewed commit. -->
 <!-- Add a line for each applicable command. Use the repository's real commands.
 - Command: `<exact command>` -> pass
 - Command: `<exact command>` -> blocked (concrete reason)
