@@ -1,115 +1,80 @@
-# .github Repository
+# Shared GitHub Community Files
 
-Organization-wide GitHub community health files and workflow templates.
+Default support, contribution and issue/PR templates for repositories owned by
+[jscraik](https://github.com/jscraik).
 
-## What's in here
+## Get help or contribute
 
-This repository provides default templates and automation for all repositories in the organization:
+- **Using a project:** start with that project's README and docs.
+- **Questions or an inaccessible intake route:** read [Support](SUPPORT.md) or email <jscraik@brainwav.io>.
+- **Reporting a bug or proposing a feature:** use the project's issue form or its documented public intake route.
+- **Contributing a change:** read the project's guidance and [Contributing](CONTRIBUTING.md).
+- **Reporting a vulnerability:** use the private routes in [Security](SECURITY.md).
 
-### Issue Templates
+## What repositories inherit
 
-- **Bug Report** (`01-bug-report.yml`) - Structured bug reporting with environment details
-- **Feature Request** (`02-feature-request.yml`) - Feature proposals with acceptance criteria
-- **Documentation** (`03-documentation.yml`) - Documentation improvements
-- **Task** (`04-task.yml`) - Internal work items
+GitHub uses supported community files from this public `.github` repository when
+a repository owned by the account does not provide its own file of that type.
 
-### PR Template
+| Resource | Behaviour |
+| --- | --- |
+| `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, `SUPPORT.md` | Supported default community files, subject to repository overrides. |
+| Issue/PR templates, issue chooser and discussion category forms | Shared defaults where the repository has not supplied its own configuration. Discussion forms require Discussions to be enabled in the destination. |
+| `FUNDING.yml` | Shared funding configuration where applicable. |
+| `GOVERNANCE.md` | A reference for projects that explicitly adopt it. |
+| Workflow files and label configuration | Require explicit configuration and adoption; they are not deployed to other repositories by community-file inheritance. |
+| A project's licence | Must be supplied by that project; there is no inherited default licence. |
 
-- Standardized PR description with checklist enforcement
-- Security/privacy considerations
-- Release notes section
+For supported files, GitHub checks the destination repository's `.github/`, root
+and `docs/` locations before falling back to this repository. A valid local issue
+template or issue-template configuration overrides the whole shared issue-template
+configuration. See [GitHub's default community file rules](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file).
 
-### Label System
+## Templates available here
 
-- **Type labels**: bug, feature, docs, chore, refactor, perf, test, ci, build, security
-- **Status labels**: needs-triage, needs-info, blocked, ready, in-progress, wontfix
-- **Priority labels**: p0 (critical), p1 (high), p2 (normal), p3 (low)
-- **Size labels**: XS, S, M, L, XL
-- **Area labels**: docs, api, ui, cli, core, deps, build, ci, tests
+The issue forms cover bug reports, feature requests, documentation and internal
+tasks. The PR template asks for the problem, changes, validation, risk, security
+and AI assistance. Template presence does not prove that a checklist or review
+requirement is enforced.
 
-### Automation Workflows
+Discussion category forms cover Q&A, ideas, announcements and show-and-tell.
+This repository's support route is email; do not assume that its Discussions
+area is enabled merely because form files exist.
 
-- **label-sync.yml** - Syncs labels across all org repos
-- **pr-title.yml** - Enforces Conventional Commits format
-- **require-checklist.yml** - Ensures PR checklist completion
-- **pr-labeler.yml** - Auto-labels PRs based on changed files
+## Automation: explicit adoption
 
-### Community Health Files
+The files in `.github/workflows/` are workflows for this repository. They are not
+an automatically inherited CI suite for every repository in the account.
 
-- **CODE_OF_CONDUCT.md** - Community behavior expectations and enforcement
-- **CONTRIBUTING.md** - Contribution guidelines and PR requirements
-- **SECURITY.md** - Vulnerability reporting and security policy
-- **SUPPORT.md** - Where to get help and ask questions
-- **GOVERNANCE.md** - Project roles and decision-making process
-- **FUNDING.yml** - Sponsorship and funding options
+- **Label sync:** `.github/workflows/label-sync.yml` names its target repositories
+  explicitly and reads `LABEL_SYNC_TOKEN`. Review those targets and the existing
+  credential's permissions before enabling or extending cross-repository sync.
+- **PR title and checklist checks:** adopt the intended workflow in each consuming
+  repository and verify a real run before requiring its check in branch rules.
+- **PR labels:** configure the consuming repository's paths and labels explicitly.
 
-### Discussion Templates
+For organisation workflow templates, GitHub provides a separate
+[`workflow-templates` mechanism](https://docs.github.com/en/actions/how-tos/reuse-automations/create-workflow-templates).
+That mechanism is distinct from the ordinary workflow files stored here.
 
-- **Q&A** (`q-a.yml`) - Structured help requests
-- **Ideas** (`ideas.yml`) - Feature proposals and improvements
-- **Announcements** (`announcements.yml`) - Release notes and major updates
-- **Show & Tell** (`show-and-tell.yml`) - Community showcases
+## Maintainer checks
 
-## Setup Instructions
+1. Check that a project's public help and security routes are usable.
+2. Review local overrides before expecting shared templates to appear.
+3. Keep the explicit label-sync target list current, including archive and rename decisions.
+4. Verify each adopted workflow in its destination repository before claiming enforcement.
+5. Match each project's support and governance commitments to its actual maintenance policy.
 
-### 1. Create this repository
+The label-sync workflow is triggered by changes to its configured workflow or
+label manifest on `main`; it does not run for every unrelated push. Its current
+configuration keeps pruning disabled.
 
-Create a repository named `.github` in your organization. GitHub will automatically use these files as defaults for all repos.
+## Maintainer scaffold
 
-### 2. Configure label sync
-
-1. Create a Personal Access Token (PAT) with `repo` scope
-2. Add it as a secret named `LABEL_SYNC_TOKEN` in this repository
-3. Edit `.github/workflows/label-sync.yml` and add your repositories to the `repository:` list
-
-### 3. Enable branch protection
-
-For each repository (or org-wide via rulesets):
-
-- Require pull request reviews
-- Require status checks:
-  - `PR title lint (Conventional Commits)`
-  - `PR checklist enforcement`
-- Require branches to be up to date
-
-### 4. Test it
-
-1. Create a test PR in any repo
-2. Verify the PR template appears
-3. Check that workflows run
-4. Confirm labels are applied
-
-## How it works
-
-GitHub looks for community health files in this order:
-
-1. Target repo's `.github/` folder
-2. Target repo's root
-3. Target repo's `docs/` folder
-4. **Organization's `.github` repo** (this one)
-
-If a repo has its own `.github/ISSUE_TEMPLATE/` folder, it completely overrides the org defaults for that repo.
-
-## Customization per repo
-
-Individual repos can:
-
-- Add repo-specific `area:*` labels (keep the prefix)
-- Override templates by creating their own `.github/ISSUE_TEMPLATE/`
-- Extend the labeler config with repo-specific paths
-
-## Maintenance
-
-- Labels are synced automatically on push to `main`
-- Review and update label taxonomy quarterly
-- Keep enforcement workflows updated with latest action versions
-- Monitor workflow runs in the Actions tab
-
-## Resources
-
-- [GitHub Docs: Creating default community health files](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file)
-- [Conventional Commits](https://www.conventionalcommits.org/)
-- [Label Syncer Action](https://github.com/micnncim/action-label-syncer)
+The following managed block describes the maintainer's configured environment.
+Its personal paths are not prerequisites for users reporting issues or reading
+these public community files. A contributor without that environment should
+record the unavailable check and use the support route above for handoff.
 
 <!-- AGENT-FIRST-WORKFLOW:START -->
 ## Agent-first workflow
