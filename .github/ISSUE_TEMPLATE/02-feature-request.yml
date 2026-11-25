@@ -9,7 +9,7 @@ body:
       value: |
         Thanks for proposing an improvement.
 
-        For usage questions/support, prefer **Discussions / Q&A**.
+        For usage questions or support, use the [shared Support guide](https://github.com/jscraik/.github/blob/main/SUPPORT.md).
 
   - type: textarea
     id: problem
