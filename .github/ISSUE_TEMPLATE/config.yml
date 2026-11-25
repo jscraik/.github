@@ -3,7 +3,7 @@ blank_issues_enabled: false
 
 contact_links:
   - name: "Questions and support"
-    url: "mailto:jscraik@brainwav.io"
+    url: "https://github.com/jscraik/.github/blob/main/SUPPORT.md"
     about: "Include the repository name, your question and the steps you have tried."
 
   - name: "Security vulnerability report"

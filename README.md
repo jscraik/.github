@@ -9,7 +9,13 @@ Default support, contribution and issue/PR templates for repositories owned by
 - **Questions or an inaccessible intake route:** read [Support](SUPPORT.md) or email <jscraik@brainwav.io>.
 - **Reporting a bug or proposing a feature:** use the project's issue form or its documented public intake route.
 - **Contributing a change:** read the project's guidance and [Contributing](CONTRIBUTING.md).
-- **Reporting a vulnerability:** use the private routes in [Security](SECURITY.md).
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:3112e896a831808ca8a8c9ee5e415a4fed73c65e1975b3f555e3cd43810815c6 -->
+
+- **Reporting a vulnerability:** follow the project's security policy. If it has none, use the [shared security policy](SECURITY.md).
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 ## What repositories inherit
 
@@ -32,10 +38,16 @@ configuration. See [GitHub's default community file rules](https://docs.github.c
 
 ## Templates available here
 
+<!-- coderabbit-ai-generated:v1 -->
+
+<!-- coderabbit-ai-generated-section:v1:e3079626cfe200f18395e76c3ebcfd104f5f036db707e06686d31c9ccd6e4e8b -->
+
 The issue forms cover bug reports, feature requests, documentation and internal
-tasks. The PR template asks for the problem, changes, validation, risk, security
-and AI assistance. Template presence does not prove that a checklist or review
+tasks. The PR template asks for a summary, impact and risk, evidence, reviewer
+focus, and readiness. Template presence does not prove that a checklist or review
 requirement is enforced.
+
+<!-- /coderabbit-ai-generated:v1 -->
 
 Discussion category forms cover Q&A, ideas, announcements and show-and-tell.
 This repository's support route is email; do not assume that its Discussions
