@@ -2,14 +2,14 @@
 blank_issues_enabled: false
 
 contact_links:
-  - name: "Discussions / Q&A"
-    url: "https://github.com/jscraik/.github/discussions"
-    about: "Questions, support, and design discussion go here."
+  - name: "Questions and support"
+    url: "https://github.com/jscraik/.github/blob/main/SUPPORT.md"
+    about: "Include the repository name, your question and the steps you have tried."
 
   - name: "Security vulnerability report"
     url: "https://github.com/jscraik/.github/security/policy"
     about: "Report vulnerabilities privately via the Security Policy."
 
   - name: "Documentation"
-    url: "https://github.com/jscraik/.github/wiki"
-    about: "Read docs / FAQs / troubleshooting."
+    url: "https://github.com/jscraik/.github/blob/main/README.md"
+    about: "Read the shared support and contribution guidance; project usage lives in each repository's README."
