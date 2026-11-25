@@ -1,72 +1,48 @@
-<!-- .github/PULL_REQUEST_TEMPLATE.md -->
+<!--
+Write for maintainers. Keep each answer short and use project terms.
+Use the target repository's required fields and checks where applicable.
+For an inapplicable required field, write n.a. and give the reason.
+Keep credentials, raw transcripts and private local paths out of the PR.
+-->
 
 ## Summary
 
-[PROMPT: What does this PR do in 1–3 sentences?]
+<!--
+State the problem and the behaviour after this change. Include scope exclusions
+when they affect review.
 
-## Motivation / Context
+Optional State Map: if the change is easier to review visually, add one small,
+editable Mermaid diagram here. Use a connection map for ownership or boundaries,
+a workflow or sequence for order, or a state diagram for the lifecycle of one
+entity. Label meaningful triggers, conditions and failure or recovery paths.
+Add a plain-language walkthrough, cite the source or contract and identify
+proposed behaviour. A short diff, tree or sentence may be enough.
+-->
 
-[PROMPT: Why is this change needed? Link context, incidents, or user feedback.]
+## Impact and risk
 
-Closes #[PROMPT: #123] (or explain why none exists)
+- **Boundaries:** <!-- Describe the blast radius. Who or what could be affected, including downstream consumers? Consider layout shifts, mobile behaviour, API or schema compatibility, providers, runtime, distribution and data where relevant. -->
+- **Merge risk and recovery:** <!-- Is this a two-way door (straightforward to undo), a one-way door (destructive or hard to reverse), or is reversibility still unverified? Explain how to roll back, what reverting the code cannot undo, and whether recovery was tested. -->
 
-## What changed?
+## Evidence
 
-[PROMPT: Bullet list of key changes.]
+- **Behaviour:** <!-- Show before and after with a test, output, screenshot or source comparison. Label inferred behaviour and identify the entry point and environment when relevant. -->
+- **Validation:** <!-- Identify the reviewed commit and the tested commit if different. List each exact validation command and its outcome: pass, fail, blocked, or not run. Keep hosted checks pending until GitHub reports results for the reviewed commit. -->
+<!-- Add a line for each applicable command. Use the repository's real commands.
+- Command: `<exact command>` -> pass
+- Command: `<exact command>` -> blocked (concrete reason)
+Use fail or not run as appropriate. Explain what remains unverified. -->
+- **Limitations:** <!-- Record material paths still untested or blocked. Use n.a. with a reason when there are none to record. -->
 
-## How to test
+## Reviewer focus
 
-[PROMPT: Exact commands + expected outcomes.]
+<!-- Name the decision, boundary or file that needs attention. Use n.a. with a reason if there is no special focus. -->
 
-- [PROMPT: e.g. pnpm test]
-- [PROMPT: e.g. pnpm lint]
-- [PROMPT: e.g. pnpm build]
+## Readiness
 
-## Risk & rollout
+- **Receipts:** <!-- State applicable create and update receipt outcomes for this head, or n.a. with a reason. -->
+- **Guarded body refresh:** <!-- State the actual helper outcome, or n.a. with a reason. -->
+- **Hosted checks and independent review:** <!-- Record outcomes for the current PR commit. A requested review stays pending until the reviewer publishes a completed verdict. -->
+- **Unresolved findings:** <!-- Link outstanding findings or say none only after checking. -->
 
-Risk level: low / medium / high
-
-Rollback plan: [PROMPT: Concrete rollback steps if needed.]
-
-## Security / privacy
-
-- [ ] No security impact
-- [ ] Security impact (describe at a high level; do NOT disclose vulnerabilities publicly)
-
-[PROMPT: High-level description if security impact checked.]
-
-## AI assistance
-
-- [ ] This PR was created with AI assistance (mark with `[AI]` in title if applicable)
-- [ ] Testing level: untested / lightly tested / fully tested
-- [ ] I understand what the code does and can explain it
-- [ ] Prompts or session logs included (Optional, but helpful)
-
-Prompt: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`  
-Session: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
-
-<details>
-<summary>AI Session Log (click to expand)</summary>
-
-[PROMPT: Short AI session summary]
-
-- Log file: `[PROMPT: ai/sessions/YYYY-MM-DD-<slug>.json]`
-- Prompt file: `[PROMPT: ai/prompts/YYYY-MM-DD-<slug>.yaml]`
-- Files touched: [PROMPT: paths]
-- Tests run: [PROMPT: commands]
-- Human verification: [PROMPT: what you personally checked]
-
-</details>
-
-## Checklist
-
-- [ ] Linked an issue or explained why none exists
-- [ ] Added/updated tests or explained why not
-- [ ] Updated docs where needed (Optional)
-- [ ] Considered backward compatibility / migrations (Optional)
-- [ ] Verified no secrets are committed (tokens, keys, passwords)
-- [ ] Confirmed CI is green (or explained failures)
-
-## Release notes
-
-Release note: [PROMPT: user-facing note, or "None".]
+- [ ] I recorded the applicable validation results and any limitations above.
